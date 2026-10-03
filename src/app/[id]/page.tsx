@@ -8,6 +8,9 @@ export interface IWorkoutDetails {
   params: {
     id: string;
   };
+
+  // muscleGroups: string[];
+  // instructions: string[];
 }
 
 const getdata = async (): Promise<Itype[]> => {
@@ -88,7 +91,7 @@ const WorkoutDetails = async ({ params }: IWorkoutDetails) => {
               </h3>
 
               <div className="flex flex-wrap gap-2">
-                {muscleGroups.map((group: string, index: number) => (
+                {muscleGroups.map((group:string, index:number) => (
                   <span
                     key={index}
                     className="rounded-full bg-[#C2F800] px-3 py-1.5 text-xs font-semibold text-black sm:px-4 sm:py-2 sm:text-sm"
