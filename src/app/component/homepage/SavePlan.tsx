@@ -32,7 +32,7 @@ const SavePlan = ({ workout }: ISavePlan) => {
       <button
         onClick={handleSavePlan}
         className="btn btn-outline flex-1"
-      >
+      ><i className="fa-regular fa-bookmark"></i>
         Save for Later
       </button>
     </div>

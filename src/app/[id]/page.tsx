@@ -42,7 +42,7 @@ const WorkoutDetails = async ({ params }: IWorkoutDetails) => {
     <div className="min-h-screen w-full bg-base-200 p-3 sm:p-4 md:p-6">
       <div className="group mx-auto flex w-full max-w-7xl flex-col overflow-hidden rounded-2xl border border-base-200 bg-base-100 shadow-lg md:flex-row">
         {/* LEFT — Image */}
-        <div className="relative h-[240px] w-full sm:h-[320px] md:h-[600px] md:w-1/2 lg:h-auto">
+       <div className="relative w-full md:w-1/2 aspect-[4/3] md:aspect-[1/1] lg:aspect-[4/3]">
           <Link
             href={`/${workout.id}`}
             className="relative block h-full w-full overflow-hidden"
@@ -170,11 +170,11 @@ const WorkoutDetails = async ({ params }: IWorkoutDetails) => {
                 Instructions
               </h3>
 
-              <ul className="list-disc space-y-1.5 pl-5 text-xs leading-5 text-base-content/80 sm:space-y-2 sm:text-sm sm:leading-6">
+              <ol className="list-decimal space-y-1.5 pl-5 text-xs leading-5 text-base-content/80 sm:space-y-2 sm:text-sm sm:leading-6">
                 {instructions.map((step: string, index: number) => (
                   <li key={index}>{step}</li>
                 ))}
-              </ul>
+              </ol>
             </div>
           )}
 

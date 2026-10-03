@@ -4,6 +4,7 @@ import { Itype } from "@/type/type";
 import { workoutContext } from "@/context/WorkoutProvider";
 import Link from "next/link";
 import { useContext } from "react";
+import { toast } from "react-toastify";
 
 interface ISavePlan {
   workout: Itype;
@@ -11,9 +12,11 @@ interface ISavePlan {
 
 const SavePlanDetails = ({ workout }: ISavePlan) => {
   const { setSavePlan } = useContext(workoutContext);
-  const handleDelete = () => {
-    setSavePlan((prev) => prev.filter((item) => item.id !== workout.id));
-  };
+ const handleDelete = () => {
+  setSavePlan((prev) => prev.filter((item) => item.id !== workout.id));
+
+  toast.success("Workout deleted successfully!");
+};
   return (
     <div className="flex w-full flex-col gap-5 rounded-2xl border border-base-300 bg-base-100 p-4 shadow-md sm:p-5 md:flex-row md:items-center md:gap-6">
       {/* Left Side: Image + Text */}

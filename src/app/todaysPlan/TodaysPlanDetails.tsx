@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Itype } from "@/type/type";
 import { workoutContext } from "@/context/WorkoutProvider";
 import Link from "next/link";
+import { toast } from "react-toastify";
 export interface ITodaysPlan {
   workout: Itype;
 }
@@ -12,6 +13,7 @@ const TodaysPlanDetails = ({ workout }: ITodaysPlan) => {
   const { setTodaysPlan } = useContext(workoutContext);
   const handleDone = () => {
     setTodaysPlan((prev) => prev.filter((item) => item.id !== workout.id));
+      toast.success("Workout DONE successfully!");
   };
   return (
     <div className="flex w-full flex-col gap-5 rounded-2xl border border-base-300 bg-base-100 p-4 shadow-md transition-all duration-300 hover:shadow-xl sm:p-5 md:flex-row md:items-center">

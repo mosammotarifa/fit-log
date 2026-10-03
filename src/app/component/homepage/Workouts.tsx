@@ -8,7 +8,8 @@ const getdata = async (): Promise<Itype[]> => {
 const Workouts = async () => {
   const workouts = await getdata();
   return (
-    <div className="min-h-screen bg-base-200 px-4 py-10">
+    <div id="library"
+    className="min-h-screen bg-base-200 px-4 py-10">
       {/* Header */}
       <div className="mx-auto mb-10 max-w-7xl text-center">
         <h2 className="text-3xl font-bold tracking-wide">THE LIBRARY</h2>

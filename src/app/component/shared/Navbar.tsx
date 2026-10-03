@@ -116,7 +116,7 @@ const Navbar = () => {
                   stroke="currentColor"
                 ></svg>
                 <span className="hidden sm:inline text-xs">Plan</span>
-                <span className="badge badge-sm font-semibold">
+                <span className="badge badge-sm font-semibold bg-[#ccff00] text-black">
                   {" "}
                   {todaysPlan.length}{" "}
                 </span>

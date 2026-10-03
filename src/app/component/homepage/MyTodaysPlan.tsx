@@ -29,7 +29,7 @@ const MyTodaysPlan = ({ workout }: IMyTodaysPlan) => {
       <button
         onClick={handleTodaysPlan}
         className="btn flex-1 bg-[#C2F800] text-black hover:bg-[#b5e900]"
-      >
+      ><i className="fa-regular fa-floppy-disk"></i>
         Add to Todays Plan
       </button>
     </div>

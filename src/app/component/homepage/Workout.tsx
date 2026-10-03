@@ -9,13 +9,13 @@ const Workout = ({ workout }: IWorkout) => {
     <div className="rounded-2xl bg-base-100 shadow-lg overflow-hidden border border-base-200 hover:shadow-xl transition-shadow duration-300">
       {/* Image */}
       <Link href={`/${workout.id}`}>
-        <div>
+        <div className="w-full">
           <Image
             src={workout.image}
             alt={workout.name}
             width={300}
             height={400}
-            className="w-full h-56 object-cover"
+            className="w-full h-48 sm:h-56 md:h-64 lg:h-72 object-cover"
           />
         </div>
       </Link>

@@ -34,8 +34,9 @@ const Hero = () => {
             </p>
 
             {/* CTA Button */}
-            <Link href={"/workoutlist"}>
-              <button
+            {/* <Link href={"/workoutlist"}> */}
+              <a
+              href="#library"
                 className="btn border-none font-extrabold tracking-wider uppercase px-8 py-3.5 text-sm rounded-xl transition-transform active:scale-95 flex items-center gap-2"
                 style={{ backgroundColor: "#C2F800", color: "#0d0d0d" }}
               >
@@ -54,8 +55,8 @@ const Hero = () => {
                     d="M14 5l7 7m0 0l-7 7m7-7H3"
                   />
                 </svg>
-              </button>
-            </Link>
+              </a>
+            {/* </Link> */}
           </div>
 
           {/* RIGHT COLUMN: Clean Image (No Glow & No Hover Transition) */}
