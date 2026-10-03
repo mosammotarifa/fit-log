@@ -1,6 +1,6 @@
 import React from 'react';
-import Link from 'next/link';
-// import WorkoutDetail from '../[id]/page';
+
+
 import Workout from '../component/homepage/Workout';
 import { Itype } from '@/type/type';
 const getworkouts =async ():Promise<Itype[]>=>{
@@ -24,14 +24,14 @@ const WorkoutsDetails =async () => {
     </div>
 
     {/* Workout Grid */}
-   {/* <Link  href= {`${workout.id}`} > */}
+   
     <div className="mx-auto grid max-w-7xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {workoutsdetails.map((workout: Itype) => (
       <Workout workout={workout} key={workout.id} /> 
       ))}
     </div>
    
-   {/* </Link> */}
+
   </div>
     );
 };

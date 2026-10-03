@@ -117,17 +117,12 @@ const Navbar = () => {
               <button className="btn btn-ghost btn-sm gap-2 rounded-full font-medium border border-base-200 hover:border-primary/30">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  // className="h-4  opacity-70 text-primary"
+                 
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
                 >
-                  {/* <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-                  /> */}
+                 
                 </svg>
                 <span className="hidden sm:inline text-xs">Plan</span>
                 <span className="badge badge-sm font-semibold"> {todaysPlan.length} </span>
@@ -137,17 +132,12 @@ const Navbar = () => {
               <button className="btn btn-ghost btn-sm gap-2 rounded-full font-medium border border-base-200 hover:border-primary/30">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  // className="h-4  opacity-70 text-secondary"
+                
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
                 >
-                  {/* <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"
-                  /> */}
+               
                 </svg>
                 <span className="hidden sm:inline text-xs">Saved</span>
                 <span className="badge badge-sm font-semibold"> {savePlan.length} </span>
