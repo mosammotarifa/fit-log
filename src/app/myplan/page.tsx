@@ -2,10 +2,10 @@
 
 import { workoutContext } from "@/context/WorkoutProvider";
 import { useContext, useState } from "react";
-import TodaysPlanDetails from "../todaysPlan/page";
-import NotFound from "../todaysPlan/notFound/page";
+import TodaysPlanDetails from "../todaysPlan/TodaysPlanDetails";
+import NotFound from "../todaysPlan/notFound/NotFound";
 import { Itype } from "@/type/type";
-import SavePlanDetails from "../savePlan/page";
+import SavePlanDetails from "../savePlan/SavePlanDetails";
 
 const MyPlan = () => {
   const { todaysPlan, savePlan } = useContext(workoutContext);

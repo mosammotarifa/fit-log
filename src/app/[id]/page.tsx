@@ -5,16 +5,13 @@ import MyTodaysPlan from "../component/homepage/MyTodaysPlan";
 import SavePlan from "../component/homepage/SavePlan";
 
 export interface IWorkoutDetails {
-  params: {
+  params:Promise< {
     id: string;
-  };
-
-  // muscleGroups: string[];
-  // instructions: string[];
+  }>
 }
 
 const getdata = async (): Promise<Itype[]> => {
-  const res = await fetch("https://api.api-store.workers.dev/api/fitlog");
+  const res = await fetch("https://api.abcz.workers.dev/api/fitlog");
 
   const data = await res.json();
 

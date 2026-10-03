@@ -1,7 +1,7 @@
 import Workout from "../component/homepage/Workout";
 import { Itype } from "@/type/type";
 const getworkouts = async (): Promise<Itype[]> => {
-  const res = await fetch("https://api.api-store.workers.dev/api/fitlog");
+  const res = await fetch("https://api.abcz.workers.dev/api/fitlog");
   const data = await res.json();
   return data;
 };

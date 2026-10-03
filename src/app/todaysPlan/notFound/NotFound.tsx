@@ -1,4 +1,3 @@
-
 import Link from "next/link";
 
 const NotFound = () => {
@@ -18,11 +17,11 @@ const NotFound = () => {
           workouts and choose what you want to do today.
         </p>
 
-       <Link href={'/'}>
-        <button className="btn bg-[#C2F800] text-black hover:bg-[#b5e900]">
-          Explore Workouts
-        </button>
-       </Link>
+        <Link href={"/"}>
+          <button className="btn bg-[#C2F800] text-black hover:bg-[#b5e900]">
+            Explore Workouts
+          </button>
+        </Link>
       </div>
     </div>
   );
