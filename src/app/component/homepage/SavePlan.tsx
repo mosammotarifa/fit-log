@@ -2,10 +2,10 @@
 
 import { workoutContext } from "@/context/WorkoutProvider";
 import { Itype } from "@/type/type";
-import  { useContext } from "react";
+import { useContext } from "react";
 import { toast } from "react-toastify";
 
-export interface ISavePlan {
+interface ISavePlan {
   workout: Itype;
 }
 
@@ -22,7 +22,8 @@ const SavePlan = ({ workout }: ISavePlan) => {
       return;
     }
 
-    setSavePlan([...savePlan, workout]);
+    setSavePlan((prev) => [...prev, workout]);
+
     toast.success("Workout saved for later!");
   };
 

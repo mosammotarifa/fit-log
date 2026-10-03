@@ -9,7 +9,7 @@ interface ISavePlan {
   workout: Itype;
 }
 
-const SavePlan = ({ workout }: ISavePlan) => {
+const SavePlanDetails = ({ workout }: ISavePlan) => {
   const { setSavePlan } = useContext(workoutContext);
   const handleDelete = () => {
     setSavePlan((prev) => prev.filter((item) => item.id !== workout.id));
@@ -76,4 +76,4 @@ const SavePlan = ({ workout }: ISavePlan) => {
   );
 };
 
-export default SavePlan;
+export default SavePlanDetails;

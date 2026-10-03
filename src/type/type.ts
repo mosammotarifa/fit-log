@@ -1,6 +1,6 @@
 export interface Itype{
      
-    id: 1,
+    id: number,
     name: string,
     image: string,
     muscleGroups: string[],

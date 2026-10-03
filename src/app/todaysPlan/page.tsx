@@ -8,7 +8,7 @@ export interface ITodaysPlan {
   workout: Itype;
 }
 
-const TodaysPlan = ({ workout }: ITodaysPlan) => {
+const TodaysPlanDetails = ({ workout }: ITodaysPlan) => {
   const { setTodaysPlan } = useContext(workoutContext);
   const handleDone = () => {
     setTodaysPlan((prev) => prev.filter((item) => item.id !== workout.id));
@@ -74,4 +74,4 @@ const TodaysPlan = ({ workout }: ITodaysPlan) => {
   );
 };
 
-export default TodaysPlan;
+export default TodaysPlanDetails;

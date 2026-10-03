@@ -2,10 +2,10 @@
 
 import { workoutContext } from "@/context/WorkoutProvider";
 import { useContext, useState } from "react";
-import TodaysPlan from "../todaysPlan/page";
+import TodaysPlanDetails from "../todaysPlan/page";
 import NotFound from "../todaysPlan/notFound/page";
 import { Itype } from "@/type/type";
-import SavePlan from "../savePlan/page";
+import SavePlanDetails from "../savePlan/page";
 
 const MyPlan = () => {
   const { todaysPlan, savePlan } = useContext(workoutContext);
@@ -148,7 +148,7 @@ const MyPlan = () => {
             {todaysPlan.length > 0 ? (
               <div className="flex w-full flex-col gap-5">
                 {sortedTodaysPlan.map((workout: Itype) => (
-                  <TodaysPlan key={workout.id} workout={workout} />
+                  <TodaysPlanDetails key={workout.id} workout={workout} />
                 ))}
               </div>
             ) : (
@@ -168,7 +168,7 @@ const MyPlan = () => {
             {savePlan.length > 0 ? (
               <div className="flex w-full flex-col gap-5">
                 {savePlan.map((workout: Itype) => (
-                  <SavePlan key={workout.id} workout={workout} />
+                  <SavePlanDetails key={workout.id} workout={workout} />
                 ))}
               </div>
             ) : (
