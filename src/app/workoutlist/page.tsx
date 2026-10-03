@@ -1,4 +1,4 @@
-import React from "react";
+
 import Workout from "../component/homepage/Workout";
 import { Itype } from "@/type/type";
 const getdata = async (): Promise<Itype[]> => {
