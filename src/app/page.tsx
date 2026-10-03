@@ -1,12 +1,12 @@
-import React from 'react';
-import Hero from './component/homepage/Hero';
-import Workouts from './component/homepage/Workouts';
+
+import Hero from "./component/homepage/Hero";
+import Workouts from "./component/homepage/Workouts";
 
 const Homepage = () => {
   return (
     <div>
-    <Hero />
-    <Workouts />
+      <Hero />
+      <Workouts />
     </div>
   );
 };

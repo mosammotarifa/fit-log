@@ -2,16 +2,12 @@
 import { Itype } from "@/type/type";
 import React, { createContext, ReactNode, useState } from "react";
 
-
-
 interface IWorkoutProvider {
   todaysPlan: Itype[];
   setTodaysPlan: React.Dispatch<React.SetStateAction<Itype[]>>;
   savePlan: Itype[];
   setSavePlan: React.Dispatch<React.SetStateAction<Itype[]>>;
 }
-
-
 
 export const workoutContext = createContext<IWorkoutProvider>({
   todaysPlan: [],
@@ -20,13 +16,9 @@ export const workoutContext = createContext<IWorkoutProvider>({
   setSavePlan: () => [],
 });
 
-
-
 const WorkoutProvider = ({ children }: { children: ReactNode }) => {
   const [todaysPlan, setTodaysPlan] = useState<Itype[]>([]);
   const [savePlan, setSavePlan] = useState<Itype[]>([]);
-
-
 
   const sharedData = {
     todaysPlan,
@@ -35,7 +27,6 @@ const WorkoutProvider = ({ children }: { children: ReactNode }) => {
     setSavePlan,
   };
 
-  
   return (
     <workoutContext.Provider value={sharedData}>
       {children}

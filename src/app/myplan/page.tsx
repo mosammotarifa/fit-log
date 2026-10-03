@@ -1,7 +1,7 @@
 "use client";
 
 import { workoutContext } from "@/context/WorkoutProvider";
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import TodaysPlan from "../todaysPlan/page";
 import NotFound from "../todaysPlan/notFound/page";
 import { Itype } from "@/type/type";
@@ -9,25 +9,25 @@ import SavePlan from "../savePlan/page";
 
 const MyPlan = () => {
   const { todaysPlan, savePlan } = useContext(workoutContext);
- const [sortBy, setSortBy] = useState<
-  "" | "duration" | "rating" | "caloriesBurned"
->("");
+  const [sortBy, setSortBy] = useState<
+    "" | "duration" | "rating" | "caloriesBurned"
+  >("");
 
-const sortedTodaysPlan = [...todaysPlan].sort((a, b) => {
-  if (sortBy === "duration") {
-    return Number(b.duration) - Number(a.duration);
-  }
+  const sortedTodaysPlan = [...todaysPlan].sort((a, b) => {
+    if (sortBy === "duration") {
+      return Number(b.duration) - Number(a.duration);
+    }
 
-  if (sortBy === "caloriesBurned") {
-    return Number(b.caloriesBurned) - Number(a.caloriesBurned);
-  }
+    if (sortBy === "caloriesBurned") {
+      return Number(b.caloriesBurned) - Number(a.caloriesBurned);
+    }
 
-  if (sortBy === "rating") {
-    return Number(b.rating) - Number(a.rating);
-  }
+    if (sortBy === "rating") {
+      return Number(b.rating) - Number(a.rating);
+    }
 
-  return 0;
-});
+    return 0;
+  });
   return (
     <div className="min-h-screen w-full bg-base-200 px-4 py-8 md:px-8 lg:px-12">
       <div className="mx-auto w-full max-w-7xl">
@@ -114,68 +114,68 @@ const sortedTodaysPlan = [...todaysPlan].sort((a, b) => {
         </div>
 
         {/* Tabs */}
-      {/* Sort */}
-<div className="mb-4 flex justify-end">
-  <select
-    defaultValue=""
-    onChange={(e) =>
-      setSortBy(
-        e.target.value as "duration" | "rating" | "caloriesBurned"
-      )
-    }
-    className="select select-neutral w-full sm:w-44"
-  >
-    <option value="" disabled>
-      Sort By
-    </option>
-    <option value="duration">Duration</option>
-    <option value="caloriesBurned">Calories</option>
-    <option value="rating">Rating</option>
-  </select>
-</div>
+        {/* Sort */}
+        <div className="mb-4 flex justify-end">
+          <select
+            defaultValue=""
+            onChange={(e) =>
+              setSortBy(
+                e.target.value as "duration" | "rating" | "caloriesBurned",
+              )
+            }
+            className="select select-neutral w-full sm:w-44"
+          >
+            <option value="" disabled>
+              Sort By
+            </option>
+            <option value="duration">Duration</option>
+            <option value="caloriesBurned">Calories</option>
+            <option value="rating">Rating</option>
+          </select>
+        </div>
 
-<div className="tabs tabs-box w-full rounded-2xl border border-base-300 bg-base-100 p-2 shadow-md">
-  {/* Today's Plan */}
-  <input
-    type="radio"
-    name="my_tabs_6"
-    className="tab h-14 flex-1 rounded-xl text-sm font-bold md:text-lg"
-    aria-label={`Today's Plan (${todaysPlan.length})`}
-    defaultChecked
-  />
+        <div className="tabs tabs-box w-full rounded-2xl border border-base-300 bg-base-100 p-2 shadow-md">
+          {/* Today's Plan */}
+          <input
+            type="radio"
+            name="my_tabs_6"
+            className="tab h-14 flex-1 rounded-xl text-sm font-bold md:text-lg"
+            aria-label={`Today's Plan (${todaysPlan.length})`}
+            defaultChecked
+          />
 
-  <div className="tab-content mt-3 w-full rounded-xl bg-base-100 p-2 md:p-5">
-    {todaysPlan.length > 0 ? (
-      <div className="flex w-full flex-col gap-5">
-        {sortedTodaysPlan.map((workout: Itype) => (
-          <TodaysPlan key={workout.id} workout={workout} />
-        ))}
-      </div>
-    ) : (
-      <NotFound />
-    )}
-  </div>
+          <div className="tab-content mt-3 w-full rounded-xl bg-base-100 p-2 md:p-5">
+            {todaysPlan.length > 0 ? (
+              <div className="flex w-full flex-col gap-5">
+                {sortedTodaysPlan.map((workout: Itype) => (
+                  <TodaysPlan key={workout.id} workout={workout} />
+                ))}
+              </div>
+            ) : (
+              <NotFound />
+            )}
+          </div>
 
-  {/* Saved Plan */}
-  <input
-    type="radio"
-    name="my_tabs_6"
-    className="tab h-14 flex-1 rounded-xl text-sm font-bold md:text-lg"
-    aria-label={`Saved Plan (${savePlan.length})`}
-  />
+          {/* Saved Plan */}
+          <input
+            type="radio"
+            name="my_tabs_6"
+            className="tab h-14 flex-1 rounded-xl text-sm font-bold md:text-lg"
+            aria-label={`Saved Plan (${savePlan.length})`}
+          />
 
-  <div className="tab-content mt-3 w-full rounded-xl bg-base-100 p-2 md:p-5">
-    {savePlan.length > 0 ? (
-      <div className="flex w-full flex-col gap-5">
-        {savePlan.map((workout: Itype) => (
-          <SavePlan key={workout.id} workout={workout} />
-        ))}
-      </div>
-    ) : (
-      <NotFound />
-    )}
-  </div>
-</div>
+          <div className="tab-content mt-3 w-full rounded-xl bg-base-100 p-2 md:p-5">
+            {savePlan.length > 0 ? (
+              <div className="flex w-full flex-col gap-5">
+                {savePlan.map((workout: Itype) => (
+                  <SavePlan key={workout.id} workout={workout} />
+                ))}
+              </div>
+            ) : (
+              <NotFound />
+            )}
+          </div>
+        </div>
       </div>
     </div>
   );

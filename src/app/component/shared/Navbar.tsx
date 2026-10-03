@@ -1,19 +1,19 @@
-"use client"
-import React, { useContext } from 'react';
-import Image from 'next/image';
-import navbarpic from '@/assets/logo.png';
-import Link from 'next/link';
-import { workoutContext } from '@/context/WorkoutProvider';
-import { usePathname } from 'next/navigation';
+"use client";
+import { useContext } from "react";
+import Image from "next/image";
+import navbarpic from "@/assets/logo.png";
+import Link from "next/link";
+import { workoutContext } from "@/context/WorkoutProvider";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
-  const {  todaysPlan,savePlan}=useContext(workoutContext)
-    const pathname = usePathname();
+  const { todaysPlan, savePlan } = useContext(workoutContext);
+  const pathname = usePathname();
   // Navigation links reusable helper
   const links = (
     <>
       <li>
-          <Link
+        <Link
           href="/"
           className={`transition-all duration-200 ${
             pathname === "/"
@@ -25,7 +25,7 @@ const Navbar = () => {
         </Link>
       </li>
       <li>
-         <Link
+        <Link
           href="/myplan"
           className={`transition-all duration-200 ${
             pathname == "/myplan"
@@ -40,15 +40,13 @@ const Navbar = () => {
   );
 
   return (
-    <div >
+    <div>
       {/* Sticky Navbar with Glassmorphism */}
-    <header className="fixed top-0 left-0 z-50 w-full border-b border-base-200 bg-base-100/80 shadow-sm backdrop-blur-md">
+      <header className="fixed top-0 left-0 z-50 w-full border-b border-base-200 bg-base-100/80 shadow-sm backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="navbar min-h-16 px-0 justify-between">
-
             {/* LEFT: Logo & Mobile Hamburger */}
             <div className="flex items-center gap-2">
-
               {/* Mobile Hamburger Dropdown */}
               <div className="dropdown lg:hidden">
                 <div
@@ -83,8 +81,8 @@ const Navbar = () => {
               </div>
 
               {/* Logo */}
-              <Link 
-                href="/" 
+              <Link
+                href="/"
                 className="flex items-center gap-2.5 group hover:opacity-90 transition-opacity"
               >
                 <div className="relative w-8 h-8 flex items-center justify-center rounded-xl bg-primary/10 ">
@@ -100,51 +98,45 @@ const Navbar = () => {
                   FITLOG
                 </span>
               </Link>
-
             </div>
 
             {/* MIDDLE: Desktop Navigation Menu */}
             <div className="hidden lg:flex">
-              <ul className="menu menu-horizontal px-1 gap-1">
-                {links}
-              </ul>
+              <ul className="menu menu-horizontal px-1 gap-1">{links}</ul>
             </div>
 
             {/* RIGHT: User Action Items / Stats */}
             <div className="flex items-center gap-2 sm:gap-3">
-
               {/* Plan Count */}
               <button className="btn btn-ghost btn-sm gap-2 rounded-full font-medium border border-base-200 hover:border-primary/30">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                 
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
-                >
-                 
-                </svg>
+                ></svg>
                 <span className="hidden sm:inline text-xs">Plan</span>
-                <span className="badge badge-sm font-semibold"> {todaysPlan.length} </span>
+                <span className="badge badge-sm font-semibold">
+                  {" "}
+                  {todaysPlan.length}{" "}
+                </span>
               </button>
 
               {/* Saved Count */}
               <button className="btn btn-ghost btn-sm gap-2 rounded-full font-medium border border-base-200 hover:border-primary/30">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
-                >
-               
-                </svg>
+                ></svg>
                 <span className="hidden sm:inline text-xs">Saved</span>
-                <span className="badge badge-sm font-semibold"> {savePlan.length} </span>
+                <span className="badge badge-sm font-semibold">
+                  {" "}
+                  {savePlan.length}{" "}
+                </span>
               </button>
-
             </div>
-
           </div>
         </div>
       </header>

@@ -2,7 +2,7 @@
 
 import { workoutContext } from "@/context/WorkoutProvider";
 import { Itype } from "@/type/type";
-import React, { useContext } from "react";
+import  { useContext } from "react";
 import { toast } from "react-toastify";
 
 export interface IMyTodaysPlan {
@@ -13,12 +13,10 @@ const MyTodaysPlan = ({ workout }: IMyTodaysPlan) => {
   const { todaysPlan, setTodaysPlan } = useContext(workoutContext);
 
   const handleTodaysPlan = () => {
-    const alreadyAdded = todaysPlan.some(
-      (item) => item.id === workout.id
-    );
+    const alreadyAdded = todaysPlan.some((item) => item.id === workout.id);
 
     if (alreadyAdded) {
-       toast.info("This workout is already in Today's Plan!");
+      toast.info("This workout is already in Today's Plan!");
       return;
     }
 

@@ -2,7 +2,7 @@
 
 import { workoutContext } from "@/context/WorkoutProvider";
 import { Itype } from "@/type/type";
-import React, { useContext } from "react";
+import  { useContext } from "react";
 import { toast } from "react-toastify";
 
 export interface ISavePlan {
